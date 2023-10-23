@@ -4,8 +4,8 @@
 
 <div class="container text-center">
 
-    <a href="{{ route('admin.projects.index')}}" class="btn mt-5 btn-outline-dark">Torna alla lista</a>
-    
+    <a href="{{ route('admin.projects.index')}}" class="btn mt-5 btn-dark me-2">Torna alla lista</a>
+    <a href="{{ route('admin.projects.edit', $project)}}" class="btn mt-5 btn-outline-dark">Modifica</a>
     <div class="my-5 border rounded w-50 m-auto p-4">
     <h1>{{$project->title}}</h1>
 

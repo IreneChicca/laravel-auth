@@ -48,7 +48,7 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <a href="{{ route('admin.projects.show', $project) }}" class="me-2"><i class="fa-regular fa-eye"></i></a>
 
                     
-                    <a href="" class="me-2"><i class="fa-solid fa-pencil"></i></a>
+                    <a href="{{ route('admin.projects.edit', $project) }}" class="me-2"><i class="fa-solid fa-pencil"></i></a>
                     <i class="fa-regular fa-trash-can"></i>
                 </td>
               </tr>

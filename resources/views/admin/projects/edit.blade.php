@@ -8,7 +8,7 @@
 
         <div class="my-5">
 
-        <h1>Modifica il progetto {{$project->title}}</h1>
+        <h1>Stai modificando il progetto: {{$project->title}}</h1>
 
 <form action="{{ route('admin.projects.update' , $project)}}" method="POST">
     @csrf
@@ -27,7 +27,7 @@
 
     <div class="col-4">
         <label for="date">Data</label>
-        <input type="text" id="date" name="date" class="form-control" value=" {{ $project->data}}">
+        <input type="text" id="date" name="date" class="form-control" value=" {{ $project->date}}">
        
     </div>
     <div class="col-4">
