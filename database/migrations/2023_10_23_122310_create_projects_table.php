@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->date('date');
-            $table->enum('main_language', ['html','js','vite','php']);
+            $table->enum('main_lang', ['html','js','vite','php']);
+            $table->integer('commit');
             $table->string('bonus');
             $table->timestamps();
         });
