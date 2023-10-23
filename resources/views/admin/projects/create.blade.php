@@ -24,32 +24,35 @@
         <div class="row justify-content-center my-5">
 
             <div class="col-4">
-                <label for="title">Data</label>
-                <input type="text" id="title" name="title" class="form-control" >
+                <label for="date">Data</label>
+                <input type="text" id="date" name="date" class="form-control" >
                
             </div>
             <div class="col-4">
-                <label for="title">Linguaggio</label>
-                <select class="form-select" aria-label="Default select example">
+                <label for="main_lang">Linguaggio</label>
+                <select class="form-select" id="main_lang" name="main_lang">
                     <option selected>Seleziona il linguaggio principale..</option>
-                    <option value="1">Html</option>
-                    <option value="2">Js</option>
-                    <option value="3">Vite</option>
-                    <option value="3">Php</option>
+                    <option value="html">Html</option>
+                    <option value="js">Js</option>
+                    <option value="vite">Vite</option>
+                    <option value="php">Php</option>
                   </select>
                
             </div>
         </div>
         <div class="row justify-content-center my-5">
             <div class="col-2">
-                <label for="title">Numero di commit</label>
-                <input type="text" id="title" name="title" class="form-control" >
+                <label for="commit">Numero di commit</label>
+                <input type="text" id="commit" name="commit" class="form-control" >
             </div>
             <div class="col-2">
-                <label for="title">Bonus</label>
-                <input type="text" id="title" name="title" class="form-control" >
+                <label for="bonus">Bonus</label>
+                <input type="text" id="bonus" name="bonus" class="form-control" >
             </div>
         </div>
+
+        <button class="btn btn-dark">Salva</button>
+
         </form>
 </div>
 
