@@ -10,6 +10,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 @section('content')
 
+<div class="container mt-5">
+
+    <a href="{{ route('admin.projects.create')}}" class="btn btn-dark">Aggiungi Progetto</a>
+
+</div>
 
 <div class="container border rounded my-5">
 
@@ -40,10 +45,10 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <td>{{$project->bonus}}</td>
                 <td>
 
-                    <a href="{{ route('admin.projects.show', $project) }}"><i class="fa-regular fa-eye"></i></a>
+                    <a href="{{ route('admin.projects.show', $project) }}" class="me-2"><i class="fa-regular fa-eye"></i></a>
 
                     
-                    <i class="fa-solid fa-pencil"></i>
+                    <a href=""class="me-2"><i class="fa-solid fa-pencil"></i></a>
                     <i class="fa-regular fa-trash-can"></i>
                 </td>
               </tr>
