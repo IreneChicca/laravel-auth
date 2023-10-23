@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
+@section('css')
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+@endsection
+
 @section('content')
+
+
 <div class="container border rounded my-5">
 
  <table class="table">
@@ -12,6 +22,7 @@
                 <th scope="col">Linguaggio</th>
                 <th scope="col">Commit</th>
                 <th scope="col">Bonus</th>
+                <th scope="col">Modifica</th>
               </tr>
             </thead>
 
@@ -27,6 +38,14 @@
                 <td>{{$project->main_lang}}</td>
                 <td>{{$project->commit}}</td>
                 <td>{{$project->bonus}}</td>
+                <td>
+
+                    <a href="{{ route('admin.projects.show', $project) }}"><i class="fa-regular fa-eye"></i></a>
+
+                    
+                    <i class="fa-solid fa-pencil"></i>
+                    <i class="fa-regular fa-trash-can"></i>
+                </td>
               </tr>
 
     @empty
