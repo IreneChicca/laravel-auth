@@ -50,33 +50,43 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                     
                     <a href="{{ route('admin.projects.edit', $project) }}" class="mx-2"><i class="fa-solid fa-pencil"></i></a>
                    
-                    {{-- <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$project->id}}" id="deleteModal">
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$project->id}}">
                       <i class="fa-regular fa-trash-can"></i>
                     </a>
 
-                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina progetto</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            Sei sicuro di voler eliminare il progetto "{{$project->title}}" ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div> --}}
+
                     
+<!-- Modal -->
+<div class="modal fade" id="delete-modal-{{ $project->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminazione del progetto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Stai per eliminare il progetto "<strong>{{$project->title}}</strong>", sicuro di voler procedere?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+
+        <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
+          @method('DELETE')
+          @csrf
+            <button class="btn btn-danger">Elimina</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{{--                     
+
+  
                    <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
                   @method('DELETE')
                   @csrf
                     <button id="del-btn"><i class="fa-regular fa-trash-can"></i></button>
-                  </form>
+                  </form> --}}
                 </div>
                 </td>
               </tr>
@@ -91,6 +101,11 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
           </table>
 
     
+
+<!-- Button trigger modal -->
+
+
+
    </div>
 </div>
 @endsection

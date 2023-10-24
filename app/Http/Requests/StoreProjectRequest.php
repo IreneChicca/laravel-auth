@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'title'=> ['required','string'],
-            'date'=> ['required','date'],
+            'date'=> ['required'],
             'main_lang'=> ['required'],
             'commit'=> ['required','integer'],
         ];
@@ -40,7 +40,6 @@ class StoreProjectRequest extends FormRequest
             'title.string'=> 'Il titolo deve essere una stringa',
 
             'date.required'=> 'La data è obbligatorio',
-            'date.date'=> 'La data deve essere in formato data \'aaa-mm-gg\'',
 
             'main_lang.required'=> 'Il linguaggio principale è obbligatorio',
 
