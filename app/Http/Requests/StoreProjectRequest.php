@@ -24,7 +24,31 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'=> ['required','string']
+            'title'=> ['required','string'],
+            'date'=> ['required','date'],
+            'main_lang'=> ['required'],
+            'commit'=> ['required','integer'],
         ];
     }
+
+
+
+    public function messages()
+    {
+        return[
+            'title.required'=> 'Il titolo è obbligatorio',
+            'title.string'=> 'Il titolo deve essere una stringa',
+
+            'date.required'=> 'La data è obbligatorio',
+            'date.date'=> 'La data deve essere in formato data \'aaa-mm-gg\'',
+
+            'main_lang.required'=> 'Il linguaggio principale è obbligatorio',
+
+            'commit.required'=> 'Il numero di commit è obbligatorio',
+            'commit.integer'=> 'Il numero di commit deve essere un numero',
+
+        ];
+
+    }
+
 }
