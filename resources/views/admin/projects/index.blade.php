@@ -44,12 +44,40 @@ crossorigin="anonymous" referrerpolicy="no-referrer" />
                 <td>{{$project->commit}}</td>
                 <td>{{$project->bonus}}</td>
                 <td>
-
-                    <a href="{{ route('admin.projects.show', $project) }}" class="me-2"><i class="fa-regular fa-eye"></i></a>
+                <div class="d-flex">
+                    <a href="{{ route('admin.projects.show', $project) }}" class=""><i class="fa-regular fa-eye"></i></a>
 
                     
-                    <a href="{{ route('admin.projects.edit', $project) }}" class="me-2"><i class="fa-solid fa-pencil"></i></a>
-                    <i class="fa-regular fa-trash-can"></i>
+                    <a href="{{ route('admin.projects.edit', $project) }}" class="mx-2"><i class="fa-solid fa-pencil"></i></a>
+                   
+                    {{-- <a href="#" data-bs-toggle="modal" data-bs-target="#delete-modal-{{$project->id}}" id="deleteModal">
+                      <i class="fa-regular fa-trash-can"></i>
+                    </a>
+
+                    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina progetto</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            Sei sicuro di voler eliminare il progetto "{{$project->title}}" ?
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div> --}}
+                    
+                   <form action="{{route('admin.projects.destroy', $project)}}" method="POST">
+                  @method('DELETE')
+                  @csrf
+                    <button id="del-btn"><i class="fa-regular fa-trash-can"></i></button>
+                  </form>
+                </div>
                 </td>
               </tr>
 
